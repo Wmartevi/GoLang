@@ -24,5 +24,4 @@ func main() {
 	//type conversion
 	b = int(c)
 	fmt.Printf("\n%T", b)
-
 }
