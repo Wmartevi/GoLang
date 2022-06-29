@@ -40,6 +40,13 @@ type trabalhador interface {
 
 func profissao(p trabalhador) {
 	p.oibomdia()
+	switch p.(type) {
+	case dentista:
+		fmt.Println("Eu ganho um bonus de: ", p.(dentista).bonus)
+	case arquiteto:
+		fmt.Println("Eu ganho um bonus de: ", p.(arquiteto).bonus)
+	}
+
 }
 
 func main() {
@@ -47,8 +54,8 @@ func main() {
 	dentista := dentista{pessoa{"Marlos", "Dos Santos", 45}, vencimentos{15000, 1000, 2000}, 3}
 	arquiteto := arquiteto{pessoa{"Josué", "Silva", 35}, vencimentos{12000, 3000, 4000}, "Alvenaria"}
 	//Chamada fora interface
-	dentista.oibomdia()
-	arquiteto.oibomdia()
+	//dentista.oibomdia()
+	//arquiteto.oibomdia()
 
 	//Chamada pela interface
 	profissao(dentista)
