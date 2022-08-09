@@ -1,0 +1,24 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	sliceint := []int{10, 20, 30, 40}
+	resultado := soma(sliceint...)
+	fmt.Println(resultado)
+
+	resultado2 := soma()
+	fmt.Println(resultado2)
+
+}
+
+func soma(x ...int) int {
+	soma := 0
+	for _, v := range x {
+		soma += v
+	}
+
+	return soma
+}
